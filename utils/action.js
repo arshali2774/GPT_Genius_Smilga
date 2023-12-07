@@ -171,6 +171,7 @@ export const fetchOrGenerateTokens = async (clerkId) => {
 };
 
 export const subtractTokens = async (clerkId, tokensUsed) => {
+  console.log('clerkId', clerkId, 'tokensUsed', tokensUsed);
   const result = await prisma.token.update({
     where: {
       clerkId,
@@ -182,5 +183,5 @@ export const subtractTokens = async (clerkId, tokensUsed) => {
     },
   });
   revalidatePath('/profile');
-  result.tokens;
+  return result.tokens;
 };

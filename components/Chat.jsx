@@ -30,6 +30,7 @@ const Chat = () => {
       }
       setMessages((prev) => [...prev, response.message]);
       const newTokens = await subtractTokens(userId, response.tokens);
+      console.log(newTokens);
       toast.success(`${newTokens} tokens remaining`);
     },
     // mutationFn: (query) => generateChatResponse([...messages, query]),
@@ -69,7 +70,7 @@ const Chat = () => {
             </div>
           );
         })}
-        {isPending ? <span className='loading'></span> : null}
+        {isPending ? <span className='loading mt-8'></span> : null}
       </div>
       <form
         onSubmit={handleSubmit}
