@@ -11,7 +11,7 @@ const HomePage = () => {
             enhances your conversations, content creation, and more!
           </p>
           <Link
-            href={'/'}
+            href={'/chat'}
             className='capitalize btn btn-secondary'
           >
             get started
